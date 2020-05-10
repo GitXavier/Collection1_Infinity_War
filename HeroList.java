@@ -1,10 +1,10 @@
 import java.util.*;
 
-public class Thanos {
+public class HeroList {
+
 
     public static void main(String[] args) {
 
-        // TODO 1 : Create an empty heroes list
         Hero blackWindow = new Hero("Black Widow", 34);
         Hero captainAmerica = new Hero("Captain America", 100);
         Hero vision = new Hero("Vision", 3);
@@ -14,7 +14,6 @@ public class Thanos {
         Hero hulk = new Hero("Hulk", 49);
         Hero doctorStrange = new Hero("doctor String", 42);
 
-        // TODO 2 : Add those heroes to the list
         ArrayList<Hero> heroes = new ArrayList<>();
         heroes.add(blackWindow);
         heroes.add(captainAmerica);
@@ -25,16 +24,29 @@ public class Thanos {
         heroes.add(hulk);
         heroes.add(doctorStrange);
 
-        // TODO 3 : It's Thor birthday, now he's 1501
+        System.out.println("Original list: ");
+        for(Hero hero : heroes) {
+                System.out.println("Nom: " + hero.getName() + " | Age: " + hero.getAge());
+        }
+
+        System.out.println(" ");
+        System.out.println("Happy Birthday Thor: ");
         heroes.get(5).setAge(1501);
+        System.out.println("Nom: " + heroes.get(5).getName() + " | Age: " + heroes.get(5).getAge());
 
-        // TODO 4 : Shuffle the heroes list
+
+        System.out.println(" ");
+        System.out.println("Random List: ");
         Collections.shuffle(heroes);
+        for(Hero hero : heroes) {
+            System.out.println("Nom: " + hero.getName() + " | Age: " + hero.getAge());
+        }
 
-        // TODO 5 : Keep only the half of the list
+        System.out.println(" ");
+        System.out.println("Living Heroes List: ");
+
         List<Hero> heroesSubList = heroes.subList(0, heroes.size() / 2);
 
-        // TODO 6 : Loop throught the list and display the name of the remaining heroes
         for(Hero hero : heroesSubList) {
             System.out.println("Nom: " + hero.getName() + " | Age: " + hero.getAge());
         }
